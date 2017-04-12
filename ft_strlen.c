@@ -6,13 +6,15 @@
 /*   By: apieczyr <apieczyr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/11 01:43:51 by apieczyr          #+#    #+#             */
-/*   Updated: 2017/04/11 02:09:11 by apieczyr         ###   ########.fr       */
+/*   Updated: 2017/04/12 00:50:57 by apieczyr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
+
 size_t		ft_strlen(const char *s)
 {
-	int i;
+	size_t i;
 
 	i = 0;
 	while (s[i])

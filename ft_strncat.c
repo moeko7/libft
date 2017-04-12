@@ -1,38 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ft_strncat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: apieczyr <apieczyr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/04/11 01:44:45 by apieczyr          #+#    #+#             */
-/*   Updated: 2017/04/12 00:50:21 by apieczyr         ###   ########.fr       */
+/*   Created: 2017/04/12 00:58:50 by apieczyr          #+#    #+#             */
+/*   Updated: 2017/04/12 01:01:54 by apieczyr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_atoi(const char *str)
+char	*ft_strncat(char *s1, const char *s2, size_t n)
 {
-	int i;
-	int sign;
-	int res;
+	size_t i;
+	size_t j;
 
 	i = 0;
-	sign = 1;
-	res = 0;
-	while ((str[i] >= 9 && str[i] <= 13) || str[i] == 32)
+	j = 0;
+	while (s1[i])
 		i++;
-	if (str[i] == '+' || str[i] == '-')
+	while (s2[j] && n > 0)
 	{
-		if (str[i] == '-')
-			sign = -1;
+		s1[i] = s2[j];
 		i++;
+		j++;
+		n--;
 	}
-	while (str[i] >= '0' && str[i] <= '9')
-	{
-		res = res * 10 + (str[i] - '0');
-		i++;
-	}
-	return (res * sign);
+	s1[i] = '\0';
+	return (s1);
 }

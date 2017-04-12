@@ -6,7 +6,7 @@
 /*   By: apieczyr <apieczyr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/11 02:09:54 by apieczyr          #+#    #+#             */
-/*   Updated: 2017/04/11 02:26:11 by apieczyr         ###   ########.fr       */
+/*   Updated: 2017/04/12 00:06:19 by apieczyr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 char	*strdup(const char *s1)
 {
-	unsigned int 	i;
+	size_t			i;
 	char			*dest;
 	size_t			len;
 
