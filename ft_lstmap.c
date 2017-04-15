@@ -1,18 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putchar_fd.c                                    :+:      :+:    :+:   */
+/*   ft_lstmap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: apieczyr <apieczyr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/04/15 09:47:56 by apieczyr          #+#    #+#             */
-/*   Updated: 2017/04/15 10:58:51 by apieczyr         ###   ########.fr       */
+/*   Created: 2017/04/15 11:15:29 by apieczyr          #+#    #+#             */
+/*   Updated: 2017/04/15 11:20:40 by apieczyr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putchar_fd(char c, int fd)
+t_list	*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem))
 {
-	write(fd, &c, 1);
+	t_list *fresh;
+
+	fresh = NULL;
+	if (lst && f)
+	{
+		fresh = (*f)(lst);
+		fresh->next = ft_lstmap(lst->next, (*f));
+		return (fresh);
+	}
+	return (NULL);
 }

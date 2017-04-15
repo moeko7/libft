@@ -6,7 +6,7 @@
 /*   By: apieczyr <apieczyr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/11 02:07:20 by apieczyr          #+#    #+#             */
-/*   Updated: 2017/04/15 10:37:06 by apieczyr         ###   ########.fr       */
+/*   Updated: 2017/04/15 11:19:24 by apieczyr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,7 @@ void				*ft_memset(void *b, int c, size_t len);
 void				ft_bzero(void *s, size_t n);
 void				*ft_memcpy(void *dst, const void *src, size_t n);
 void				*ft_memccpy(void *dst, const void *src, const int c,
-	   															size_t size);
+																size_t size);
 void				*ft_memmove(void *dst, const void *src, size_t len);
 void				*ft_memchr(const void *s, int c, size_t n);
 void				*ft_memalloc(size_t size);
@@ -68,11 +68,11 @@ int					ft_strnequ(char const *s1, char const *s2, size_t n);
 char				*ft_strsub(char const *s, unsigned int start, size_t len);
 char				*ft_strjoin(char const *s1, char const *s2);
 char				*ft_strtrim(char const *s);
-char				**ft_cleaner(char **Tab, int len);
+char				**ft_cleaner(char **tab, int len);
 size_t				ft_strrlen(char const *s, const char c);
 char				**ft_strsplit(const char *s, char c);
 char				*ft_itoa(int n);
-int					ft_digitlen(int *n);
+unsigned int		ft_digitlen(int *n);
 void				ft_putchar(char c);
 void				ft_putstr(char *str);
 void				ft_putstr_fd(char const *s, int fd);
@@ -81,4 +81,11 @@ void				ft_putnbr_fd(int n, int fd);
 void				ft_putchar_fd(char c, int fd);
 void				ft_putendl(char const *s);
 void				ft_putendl_fd(char const *s, int fd);
+t_list				*ft_lstnew(void const *content, size_t content_size);
+void				ft_lstdelone(t_list **alst, void (*del)(void *, size_t));
+void				ft_lstdel(t_list **alst, void (*del)(void *, size_t));
+void				ft_lstadd(t_list **alst, t_list *new);
+t_list				*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
+void				ft_lstiter(t_list *lst, void (*f)(t_list *elem));
+
 #endif

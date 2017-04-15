@@ -6,7 +6,7 @@
 /*   By: apieczyr <apieczyr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/14 21:30:30 by apieczyr          #+#    #+#             */
-/*   Updated: 2017/04/15 10:29:25 by apieczyr         ###   ########.fr       */
+/*   Updated: 2017/04/15 11:03:33 by apieczyr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,12 +17,12 @@ static int	wspace(const int c)
 	return (c == ' ' || c == '\t' || c == '\n');
 }
 
-char	*ft_strtrim(char const *s)
+char		*ft_strtrim(char const *s)
 {
 	size_t	start;
 	size_t	end;
 	size_t	len;
-	char 	*trim;
+	char	*trim;
 
 	if (!s)
 		return (NULL);
