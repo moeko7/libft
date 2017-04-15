@@ -1,27 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strnequ.c                                       :+:      :+:    :+:   */
+/*   ft_cleaner.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: apieczyr <apieczyr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/04/14 21:10:40 by apieczyr          #+#    #+#             */
-/*   Updated: 2017/04/15 09:21:36 by apieczyr         ###   ########.fr       */
+/*   Created: 2017/04/15 09:25:30 by apieczyr          #+#    #+#             */
+/*   Updated: 2017/04/15 09:28:18 by apieczyr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
-int		ft_strnequ(char const *s1, char const *s2, size_t n)
+char    **ft_cleaner(char **tab, int len)
 {
-	if (!s1 || !s2)
-		return (0);
-	while (*s1 && *s2 && n--)
-	{
-		if (*s1 != *s2)
-			return (0);
-		s1++;
-		s2++;
-	}
-	return (1);
+	while (len--)
+		free(tab[len]);
+	free(tab);
+	return (NULL);
 }

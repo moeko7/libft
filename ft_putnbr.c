@@ -1,27 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strnequ.c                                       :+:      :+:    :+:   */
+/*   ft_putnbr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: apieczyr <apieczyr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/04/14 21:10:40 by apieczyr          #+#    #+#             */
-/*   Updated: 2017/04/15 09:21:36 by apieczyr         ###   ########.fr       */
+/*   Created: 2017/04/15 09:43:55 by apieczyr          #+#    #+#             */
+/*   Updated: 2017/04/15 10:31:29 by apieczyr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_strnequ(char const *s1, char const *s2, size_t n)
+void	ft_putnbr(int n)
 {
-	if (!s1 || !s2)
-		return (0);
-	while (*s1 && *s2 && n--)
+	if (n == -2147483648)
+		ft_putstr("-2147483648");
+	if (n < 0)
 	{
-		if (*s1 != *s2)
-			return (0);
-		s1++;
-		s2++;
+		ft_putchar(45);
+		n *= -1;
 	}
-	return (1);
+	if (n >= 10)
+		ft_putnbr(n / 10);
+	ft_putchar(n % 10 + 48);
 }

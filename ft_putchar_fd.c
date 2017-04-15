@@ -1,27 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strnequ.c                                       :+:      :+:    :+:   */
+/*   ft_putchar_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: apieczyr <apieczyr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/04/14 21:10:40 by apieczyr          #+#    #+#             */
-/*   Updated: 2017/04/15 09:21:36 by apieczyr         ###   ########.fr       */
+/*   Created: 2017/04/15 09:47:56 by apieczyr          #+#    #+#             */
+/*   Updated: 2017/04/15 09:49:31 by apieczyr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_strnequ(char const *s1, char const *s2, size_t n)
+void	ft_putchar_fd(char c, int fd)
 {
-	if (!s1 || !s2)
-		return (0);
-	while (*s1 && *s2 && n--)
-	{
-		if (*s1 != *s2)
-			return (0);
-		s1++;
-		s2++;
-	}
-	return (1);
+	write (fd, &c, 1);
 }

@@ -1,27 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strnequ.c                                       :+:      :+:    :+:   */
+/*   ft_memccpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: apieczyr <apieczyr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/04/14 21:10:40 by apieczyr          #+#    #+#             */
-/*   Updated: 2017/04/15 09:21:36 by apieczyr         ###   ########.fr       */
+/*   Created: 2017/04/15 08:32:53 by apieczyr          #+#    #+#             */
+/*   Updated: 2017/04/15 08:39:15 by apieczyr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_strnequ(char const *s1, char const *s2, size_t n)
+void	*ft_memccpy(void *dst, const void *src, const int c, size_t size)
 {
-	if (!s1 || !s2)
-		return (0);
-	while (*s1 && *s2 && n--)
-	{
-		if (*s1 != *s2)
-			return (0);
-		s1++;
-		s2++;
-	}
-	return (1);
+	size_t			i;
+	unsigned char	*dest;
+
+	i = 0;
+	dest = (unsigned char *)dst;
+	while (size--)
+		if ((*dest++ = ((const unsigned char *)src)[i++]) == (unsigned char)c)
+			return (dest);
+	return (NULL);
 }

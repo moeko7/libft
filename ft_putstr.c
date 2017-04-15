@@ -6,7 +6,7 @@
 /*   By: apieczyr <apieczyr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/14 20:37:53 by apieczyr          #+#    #+#             */
-/*   Updated: 2017/04/14 20:39:08 by apieczyr         ###   ########.fr       */
+/*   Updated: 2017/04/15 09:20:37 by apieczyr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 
 void	ft_putstr(char *str)
 {
+	if (!str)
+		return ;
 	while (*str)
 		ft_putchar(*str++);
 }

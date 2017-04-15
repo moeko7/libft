@@ -6,23 +6,38 @@
 /*   By: apieczyr <apieczyr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/14 21:30:30 by apieczyr          #+#    #+#             */
-/*   Updated: 2017/04/15 03:17:07 by apieczyr         ###   ########.fr       */
+/*   Updated: 2017/04/15 10:29:25 by apieczyr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+static int	wspace(const int c)
+{
+	return (c == ' ' || c == '\t' || c == '\n');
+}
+
 char	*ft_strtrim(char const *s)
 {
-	size_t	len;
 	size_t	start;
+	size_t	end;
+	size_t	len;
+	char 	*trim;
 
+	if (!s)
+		return (NULL);
+	end = ft_strlen(s);
 	start = 0;
-	while (s[start] == WSPACE)
+	while (wspace(s[start]))
 		start++;
-	len = ft_strlen(s);
-	while (s[len] == WSPACE)
-		len--;
-	len -= start;
-	return (ft_strsub(s, start, len));
+	if (!s[start])
+	{
+		trim = ft_strnew(0);
+		return (trim);
+	}
+	while (wspace(s[end - 1]))
+		end--;
+	len = end - start;
+	trim = ft_strsub(s, start, len);
+	return (trim);
 }
