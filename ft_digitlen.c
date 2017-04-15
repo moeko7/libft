@@ -1,23 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcmp.c                                        :+:      :+:    :+:   */
+/*   ft_digitlen.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: apieczyr <apieczyr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/04/11 01:58:58 by apieczyr          #+#    #+#             */
-/*   Updated: 2017/04/15 03:50:57 by apieczyr         ###   ########.fr       */
+/*   Created: 2017/04/13 23:09:36 by apieczyr          #+#    #+#             */
+/*   Updated: 2017/04/13 23:09:50 by apieczyr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_strcmp(const char *s1, const char *s2)
+int	ft_digitlen(int n)
 {
-	while (*s1 == *s2 && *s1 && *s2)
+	int	size;
+
+	size = 0;
+	if (n < 0)
 	{
-		s1++;
-		s2++;
+		size += 1;
+		n = -n;
 	}
-	return (*(const unsigned char *)s1 - *(const unsigned char *)s2);
+	while (n != 0)
+	{
+		size++;
+		n /= 10;
+	}
+	return (size += 1);
 }

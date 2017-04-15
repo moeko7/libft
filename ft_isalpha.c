@@ -6,7 +6,7 @@
 /*   By: apieczyr <apieczyr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/12 20:35:50 by apieczyr          #+#    #+#             */
-/*   Updated: 2017/04/12 20:36:53 by apieczyr         ###   ########.fr       */
+/*   Updated: 2017/04/13 21:14:24 by apieczyr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,5 @@
 
 int		ft_isalpha(int c)
 {
-	return(ft_isupper(c) && ft_islower(c));
+	return (ft_isupper(c) || ft_islower(c));
 }

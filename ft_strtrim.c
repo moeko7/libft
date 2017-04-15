@@ -1,23 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcmp.c                                        :+:      :+:    :+:   */
+/*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: apieczyr <apieczyr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/04/11 01:58:58 by apieczyr          #+#    #+#             */
-/*   Updated: 2017/04/15 03:50:57 by apieczyr         ###   ########.fr       */
+/*   Created: 2017/04/14 21:30:30 by apieczyr          #+#    #+#             */
+/*   Updated: 2017/04/15 03:17:07 by apieczyr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_strcmp(const char *s1, const char *s2)
+char	*ft_strtrim(char const *s)
 {
-	while (*s1 == *s2 && *s1 && *s2)
-	{
-		s1++;
-		s2++;
-	}
-	return (*(const unsigned char *)s1 - *(const unsigned char *)s2);
+	size_t	len;
+	size_t	start;
+
+	start = 0;
+	while (s[start] == WSPACE)
+		start++;
+	len = ft_strlen(s);
+	while (s[len] == WSPACE)
+		len--;
+	len -= start;
+	return (ft_strsub(s, start, len));
 }

@@ -6,7 +6,7 @@
 /*   By: apieczyr <apieczyr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/12 00:17:08 by apieczyr          #+#    #+#             */
-/*   Updated: 2017/04/12 00:51:23 by apieczyr         ###   ########.fr       */
+/*   Updated: 2017/04/15 02:59:31 by apieczyr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,21 +14,9 @@
 
 char	*ft_strncpy(char *dst, const char *src, size_t len)
 {
-	size_t i;
-
-	i = 0;
-	while  (len > 0)
-	{	
-		while (src[i])
-		{
-			dst[i] = src[i];
-			i++;
-			len--;
-		}
-		dst[i] = '\0';
-		i++;
-		len--;
-	}
-	dst[i] = '\0';
+	while (len-- && *src)
+		*dst++ = *src++;
+	while (len--)
+		*dst++ = '\0';
 	return (dst);
 }

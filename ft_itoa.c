@@ -1,34 +1,51 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: apieczyr <apieczyr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/04/11 02:09:54 by apieczyr          #+#    #+#             */
-/*   Updated: 2017/04/13 03:38:43 by apieczyr         ###   ########.fr       */
+/*   Created: 2017/04/13 23:08:41 by apieczyr          #+#    #+#             */
+/*   Updated: 2017/04/15 04:01:42 by apieczyr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strdup(const char *s1)
+static unsigned int	getsize(int *n)
 {
-	size_t			i;
-	char			*dest;
-	size_t			len;
+	unsigned int	si;
+	long long int	n2;
 
-	i = 0;
-	len = ft_strlen(s1);
-	if (!s1)
-		return (NULL);
-	if (!(dest = (char *)malloc(sizeof(char) * len + 1)))
-		return (NULL);
-	while (i < len)
+	si = 1;
+	if (*n < 0)
 	{
-		dest[i] = s1[i];
-		i++;
+		si++;
+		*n *= -1;
 	}
-	dest[i] = '\0';
-	return (dest);
+	n2 = *n;
+	while (n2 /= 10)
+		si++;
+	return (si);
+}
+
+char				*ft_itoa(int n)
+{
+	unsigned int	si;
+	char			*s;
+	short			sign;
+
+	sign = n < 0 ? -1 : 0;
+	si = getsize(&n);
+	if (!(s = (char *)malloc(sizeof(char) * (si + 1))))
+		return (NULL);
+	s[si] = 0;
+	while (si--)
+	{
+		s[si] = n % 10 + 48;
+		n /= 10;
+	}
+	if (sign)
+		*s = 45;
+	return (s);
 }

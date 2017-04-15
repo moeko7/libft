@@ -1,23 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcmp.c                                        :+:      :+:    :+:   */
+/*   ft_strmap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: apieczyr <apieczyr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/04/11 01:58:58 by apieczyr          #+#    #+#             */
-/*   Updated: 2017/04/15 03:50:57 by apieczyr         ###   ########.fr       */
+/*   Created: 2017/04/13 02:29:05 by apieczyr          #+#    #+#             */
+/*   Updated: 2017/04/15 04:31:11 by apieczyr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_strcmp(const char *s1, const char *s2)
+char	*ft_strmap(char const *s, char (*f)(char))
 {
-	while (*s1 == *s2 && *s1 && *s2)
-	{
-		s1++;
-		s2++;
-	}
-	return (*(const unsigned char *)s1 - *(const unsigned char *)s2);
+	char	*fresh;
+	size_t	len;
+
+	len = ft_strlen(s);
+	if (!s)
+		return (NULL);
+	if (!(fresh = (char *)malloc(sizeof(char) * len + 1)))
+		return (NULL);
+	while (*s)
+		*fresh++ = f((char)*s++);
+	*fresh = 0;
+	fresh -= len;
+	return (fresh);
 }

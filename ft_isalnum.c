@@ -6,7 +6,7 @@
 /*   By: apieczyr <apieczyr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/12 20:40:16 by apieczyr          #+#    #+#             */
-/*   Updated: 2017/04/12 20:41:02 by apieczyr         ###   ########.fr       */
+/*   Updated: 2017/04/13 21:14:58 by apieczyr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,5 @@
 
 int		ft_isalnum(int c)
 {
-	return (ft_isalpha(c) || ft_isdigit(c));
+	return (ft_isalpha(c) || ft_isdigit(c) ? 1 : 0);
 }

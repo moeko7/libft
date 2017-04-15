@@ -1,23 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcmp.c                                        :+:      :+:    :+:   */
+/*   ft_memdel.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: apieczyr <apieczyr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/04/11 01:58:58 by apieczyr          #+#    #+#             */
-/*   Updated: 2017/04/15 03:50:57 by apieczyr         ###   ########.fr       */
+/*   Created: 2017/04/13 00:21:54 by apieczyr          #+#    #+#             */
+/*   Updated: 2017/04/13 00:28:10 by apieczyr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_strcmp(const char *s1, const char *s2)
+void	ft_memdel(void **ap)
 {
-	while (*s1 == *s2 && *s1 && *s2)
+	if (ap)
 	{
-		s1++;
-		s2++;
+		free(*ap);
+		*ap = NULL;
 	}
-	return (*(const unsigned char *)s1 - *(const unsigned char *)s2);
 }
