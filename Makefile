@@ -6,7 +6,7 @@
 #*   By: apieczyr <apieczyr@student.42.fr>          +#+  +:+       +#+        *#
 #*                                                +#+#+#+#+#+   +#+           *#
 #*   Created: 2017/04/12 23:50:02 by apieczyr          #+#    #+#             *#
-#*   Updated: 2017/04/15 11:30:17 by apieczyr         ###   ########.fr       *#
+#*   Updated: 2017/04/24 09:20:52 by apieczyr         ###   ########.fr       *#
 #*                                                                            *#
 #* ************************************************************************** *#
 
@@ -74,79 +74,18 @@ SRCS = ft_isalpha.c\
 	   ft_lstiter.c\
 	   ft_lstmap.c\
 	   ft_isupper.c\
-	   ft_islower.c
+	   ft_islower.c\
+	   ft_recursive_power.c
 
-OBJ =  ft_isalpha.o\
-	   ft_isalnum.o\
-	   ft_isascii.o\
-	   ft_isprint.o\
-	   ft_isdigit.o\
-	   ft_atoi.o\
-	   ft_strcat.o\
-	   ft_strcmp.o\
-	   ft_strcpy.o\
-	   ft_strdup.o\
-	   ft_strlen.o\
-	   ft_strncat.o\
-	   ft_strncmp.o\
-	   ft_strncpy.o\
-	   ft_strstr.o\
-	   ft_strlcat.o\
-	   ft_memset.o\
-	   ft_memcpy.o\
-	   ft_bzero.o\
-	   ft_memccpy.o\
-	   ft_memchr.o\
-	   ft_memcmp.o\
-	   ft_memmove.o\
-	   ft_strchr.o\
-	   ft_strnstr.o\
-	   ft_tolower.o\
-	   ft_toupper.o\
-	   ft_strrchr.o\
-	   ft_putnbr_fd.o\
-	   ft_putendl_fd.o\
-	   ft_putstr_fd.o\
-	   ft_putchar_fd.o\
-	   ft_putnbr.o\
-	   ft_putendl.o\
-	   ft_putstr.o\
-	   ft_putchar.o\
-	   ft_itoa.o\
-	   ft_strsplit.o\
-	   ft_strtrim.o\
-	   ft_strjoin.o\
-	   ft_strsub.o\
-	   ft_strnequ.o\
-	   ft_strequ.o\
-	   ft_strmapi.o\
-	   ft_strmap.o\
-	   ft_striteri.o\
-	   ft_striter.o\
-	   ft_strclr.o\
-	   ft_strdel.o\
-	   ft_strnew.o\
-	   ft_memdel.o\
-	   ft_memalloc.o\
-	   ft_cleaner.o\
-	   ft_strrlen.o\
-	   ft_digitlen.o\
-	   ft_lstnew.o\
-	   ft_lstdelone.o\
-	   ft_lstdel.o\
-	   ft_lstadd.o\
-	   ft_lstiter.o\
-	   ft_lstmap.o\
-	   ft_isupper.o\
-	   ft_islower.o
+OBJ = $(SRCS:.c=.o) 
 
 HEADERS = libft.h
 
 FLAGS = -Wall -Wextra -Werror
 
-BLUE = $ echo "\033[1;36;4mA new lib is born.\n\033[0m"
+BLUE = $ echo "\033[1;32;4mCompiled. √\n\033[0m"
 
-RED = $ echo "\033[1;31;4mSay goodbye to the garbages.\n\033[0m"
+RED = $ echo "\033[1;31;4mBye bye.\n\033[0m"
 
 all : $(NAME)
 
